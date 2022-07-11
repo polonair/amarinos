@@ -1,10 +1,11 @@
 .PHONY: all clean
 
-all: build/
-	touch $<amarin.elf
+ARCH = x86_64
 
-build/:
-	mkdir $@
+TARGET = bootloader.efi
 
-clean:
-	rm -rf build
+SRCS = $(wildcard *.c)
+
+CFLAGS = -pedantic -Wall -Wextra -Werror --ansi -O2
+
+include uefi/Makefile
