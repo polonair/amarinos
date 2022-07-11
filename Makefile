@@ -2,6 +2,9 @@
 
 all: build/amarin.img
 
+dist: build/amarin.img
+	cd build; zip -9 ../amarin_os-v0.0.1.zip amarin.img
+
 run: build/amarin.img
 	qemu-system-x86_64 \
 		-bios OVMF.fd \
@@ -44,5 +47,6 @@ build/:
 clean:
 	rm -rf rootfs/bin/*
 	rm -rf build
+	rm -rf ./*.zip
 	touch rootfs/bin/.gitkeep
 	cd src; make clean
