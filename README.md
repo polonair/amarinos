@@ -1,3 +1,3 @@
 # amarinos
 
-Amarin operating system 
+Amarin Operating System 

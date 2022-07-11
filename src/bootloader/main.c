@@ -1,14 +1,10 @@
 #include <uefi.h>
 
-/**
- * Classic Hello World example
- */
-int main(int argc, char **argv)
-{
-    (void)argc;
-    (void)argv;
+int main() {
+    ST->ConOut->ClearScreen(ST->ConOut);
+    printf("Amarin Bootloader v0.0.1\n\n");
 
-    printf("Hello World!\n");
+    printf("Searching for rootfs...\n");
     while(1);
     return 0;
 }
